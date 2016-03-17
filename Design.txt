@@ -1,0 +1,7 @@
+I’ve added answer_check property and move_histories to Game model in order for some of the functions to work properly.
+
+1. answer_check: I created this property to store correct answer that player have provided. I initialize it with empty string to represent the position of each correct answer. Once player have guessed the right move, the answer will fill in the empty string. This property helps the app to store the exact character player have answered correctly. It also helps the player to avoid duplicate answers.
+
+2. move_histories: This a pickle property stores all movements submitted by the player. It stores user’s move and the message of the move into a list. User can request the move histories of a game by providing the game’s url safe key.
+
+I did have a hard time understanding google app engine with the conference organizer app project. The game api project made a lot of more senses to me because it’s not as complex as the conference app. I am not sure pickle property is the best way to store move_histories. I was choosing between starting a new model or using move_histories to store all game histories. I decide to pick move_histories property because it gets the job done for this simple api app.

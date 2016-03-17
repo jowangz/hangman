@@ -73,9 +73,11 @@ class HangmanApi(remote.Service):
     def get_game(self, request):
         """Return a current game state."""
         game = get_by_urlsafe(request.urlsafe_game_key, Game)
-        if game:
+        if game and game.game_over is not True:
             return game.to_form('Time to make a move! {} left'.
                                 format(game.attempts_remaining))
+        elif game.game_over is True:
+            return game.to_form('Game already over')
         else:
             raise endpoints.NotFoundException('Game not found!')
 
@@ -147,6 +149,10 @@ class HangmanApi(remote.Service):
             raise endpoints.NotFoundException(
                     'A user with that name does not exist!')
         scores = Score.query(Score.user == user.key)
+        if not scores:
+            raise endpoints.NotFoundException(
+                    'No score found for this user!'
+                    )
         return ScoreForms(items=[score.to_form() for score in scores])
 
     @endpoints.method(
