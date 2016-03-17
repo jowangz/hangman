@@ -8,8 +8,8 @@ This Api provides endpoints for you to develope your own Hangman like applicatio
 
 ## Quick Start Instructions:
 1. Update the value of application in app.yaml to app ID you have registered in the App Engine admin console.
-1. Run the app with devserver using dev_appserver.py DIR or GoogleAppEngine launcher. visit '''localhost:8080''' to ensure its running.
-1. visit API explorer through this url: '''localhost:8080/_ah/api/explorer'''
+1. Run the app with devserver using dev_appserver.py DIR or GoogleAppEngine launcher. visit ```localhost:8080``` to ensure its running.
+1. visit API explorer through this url: ```localhost:8080/_ah/api/explorer```
 
 ##Files Included:
  - api.py: Contains endpoints and game playing logic.
