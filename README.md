@@ -4,7 +4,20 @@
 This is a hangman like mini-game. The player have limited chances to guess a word. The game will ends when the player have successfully or fail to guess the word within the guessing limits.
 
 ## HangmanApi Description:
-This Api provide endpoints for you to develope your own Hangman like applications.
+This Api provides endpoints for you to develope your own Hangman like applications.
+
+## Quick Start Instructions:
+1. Update the value of application in app.yaml to app ID you have registered in the App Engine admin console.
+1. Run the app with devserver using dev_appserver.py DIR or GoogleAppEngine launcher. visit '''localhost:8080''' to ensure its running.
+1. visit API explorer through this url: '''localhost:8080/_ah/api/explorer'''
+
+##Files Included:
+ - api.py: Contains endpoints and game playing logic.
+ - app.yaml: App configuration.
+ - cron.yaml: Cronjob configuration.
+ - main.py: Handler for taskqueue handler.
+ - models.py: Entity and message definitions including helper methods.
+ - utils.py: Helper function for retrieving ndb.Models by urlsafe Key string.
 
 ## Endpoints Included:
  - **create_user**
