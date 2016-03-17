@@ -1,0 +1,4 @@
+cron:
+- description: Send a reminder email to users that have incomplete games
+  url: /crons/send_reminder
+  schedule: every day 16:00
